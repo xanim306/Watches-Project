@@ -32,14 +32,12 @@ function ProductCard({ basket, products, loading, dispatch }) {
       payload: [...basket],
     });
   };
-  const total = basket.reduce((acc, item) => {
-    const productPrice = products.find((a) => a.id === item.id)?.price;
-    const productDiscount = products.find((a) => a.id === item.id)?.discount;
-    console.log(productPrice, productDiscount, item.count, acc);
-    return (
-      acc + (productPrice - (productPrice * productDiscount) / 100) * item.count
-    );
-  }, 0);
+  // const total = basket.reduce((acc, item) => {
+  //   const productPrice = products.find((a) => a.id === item.id)?.price;
+  //   // const productDiscount = products.find((a) => a.id === item.id)?.discount;
+  //   console.log(productPrice, productDiscount, item.count, acc);
+  //   return acc + productPrice;
+  // }, 0);
   return (
     <>
       <Cardbg />
@@ -52,7 +50,7 @@ function ProductCard({ basket, products, loading, dispatch }) {
                   <p>
                     Total Price:{" "}
                     <span>
-                      {total} <i className="fa-solid fa-manat-sign"></i>
+                      {/* {total} <i className="fa-solid fa-manat-sign"></i> */}
                     </span>
                   </p>
                 </div>
@@ -66,7 +64,7 @@ function ProductCard({ basket, products, loading, dispatch }) {
                     <>
                       <div className="card_product" key={a?.id}>
                         <div className="card_img">
-                          <img src={product?.images[0].image} alt="" />
+                          <img src={product?.frontimage} alt="" />
                         </div>
                         <div className="card_titles">
                           <p>

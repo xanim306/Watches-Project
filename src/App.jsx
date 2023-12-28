@@ -60,6 +60,7 @@ const AdminFunctionalityEdit = lazy(() =>
   import("./admin/pages/AdminFunctionalityAdd/AdminFunctionalityEdit")
 );
 function App({ API_WATCHES, basket, favorite, dispatch }) {
+  console.log(API_WATCHES);
   let loc = useLocation();
   useEffect(() => {
     window.scrollTo({
@@ -68,12 +69,16 @@ function App({ API_WATCHES, basket, favorite, dispatch }) {
   }, [loc.pathname]);
   // console.log(basket);
   // console.log(favorite);
-  // useEffect(() => {
-  //   localStorage.setItem("basket", JSON.stringify(basket));
-  // }, [basket]);
-  // useEffect(() => {
-  //   localStorage.setItem("favorite", JSON.stringify(favorite));
-  // }, [favorite]);
+  useEffect(() => {
+    if (basket) {
+      localStorage.setItem("basket", JSON.stringify(basket));
+    }
+  }, [basket]);
+  useEffect(() => {
+    if (favorite) {
+      localStorage.setItem("favorite", JSON.stringify(favorite));
+    }
+  }, [favorite]);
   useEffect(() => {
     fetch(`${API_WATCHES}`, {
       method: "GET",

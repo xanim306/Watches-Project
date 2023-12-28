@@ -2,11 +2,11 @@ const localBasket = localStorage.getItem("basket");
 const localFavorite = localStorage.getItem("favorite");
 
 const init = {
-  API_CATEGORY: `http://127.0.0.1:8000/api/control/categories`,
-  API_COMPANY: `http://127.0.0.1:8000/api/control/companies`,
-  API_MOVEMENT: `http://127.0.0.1:8000/api/control/movements`,
-  API_FUNCTIONALITY: `http://127.0.0.1:8000/api/control/functionalities`,
-  API_WATCHES: `http://127.0.0.1:8000/api/control/watches`,
+  API_CATEGORY: `http://localhost:1225/category`,
+  API_COMPANY: `http://localhost:1225/company`,
+  API_MOVEMENT: ` http://localhost:1225/movement`,
+  API_FUNCTIONALITY: ` http://localhost:1225/functionality`,
+  API_WATCHES: `http://localhost:1225/products`,
   asidebasket: false,
   navMenu: false,
   showPicture: false,

@@ -211,11 +211,26 @@ function Product({
                         onSlideChange={detectChange}
                         className="details_swiper_up"
                       >
-                        {product?.images?.map((image) => (
-                          <SwiperSlide key={image.id}>
-                            <img src={image.image} alt="" />
+                        {product.frontimage && (
+                          <SwiperSlide>
+                            <img src={product.frontimage} alt="" />
                           </SwiperSlide>
-                        ))}
+                        )}
+                        {product.sideimage && (
+                          <SwiperSlide>
+                            <img src={product.sideimage} alt="" />
+                          </SwiperSlide>
+                        )}
+                        {product.backimage && (
+                          <SwiperSlide>
+                            <img src={product.backimage} alt="" />
+                          </SwiperSlide>
+                        )}
+                        {product.handimage && (
+                          <SwiperSlide>
+                            <img src={product.handimage} alt="" />
+                          </SwiperSlide>
+                        )}
                       </Swiper>
                       <Swiper
                         onSwiper={setThumbsSwiper}
@@ -226,11 +241,26 @@ function Product({
                         modules={[FreeMode, Thumbs]}
                         className="details_swiper_down"
                       >
-                        {product?.images?.map((image) => (
-                          <SwiperSlide key={image.id}>
-                            <img src={image.image} alt="" />
+                        {product.frontimage && (
+                          <SwiperSlide>
+                            <img src={product.frontimage} alt="" />
                           </SwiperSlide>
-                        ))}
+                        )}
+                        {product.sideimage && (
+                          <SwiperSlide>
+                            <img src={product.sideimage} alt="" />
+                          </SwiperSlide>
+                        )}
+                        {product.backimage && (
+                          <SwiperSlide>
+                            <img src={product.backimage} alt="" />
+                          </SwiperSlide>
+                        )}
+                        {product.handimage && (
+                          <SwiperSlide>
+                            <img src={product.handimage} alt="" />
+                          </SwiperSlide>
+                        )}
                       </Swiper>
                     </div>
                     <div className="details_specifications">
@@ -483,10 +513,7 @@ function Product({
                               key={anotherproducts.id}
                             >
                               <div className="details_another_img">
-                                <img
-                                  src={anotherproducts.images[0].image}
-                                  alt=""
-                                />
+                                <img src={anotherproducts.frontimage} alt="" />
                               </div>
                               <div className="details_another_titles">
                                 <p>{anotherproducts.title.slice(0, 25)}...</p>

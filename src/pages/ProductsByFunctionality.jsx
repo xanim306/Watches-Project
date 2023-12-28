@@ -119,7 +119,7 @@ function ProductsByFunctionality({
               key={a.id}
               className="probynamebg"
               style={{
-                backgroundImage: `url(${a.image})`,
+                backgroundImage: `url(${a.bgimage})`,
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
@@ -145,6 +145,9 @@ function ProductsByFunctionality({
                     const checkFavorite = favorite.find(
                       (f) => f.id === product.id
                     );
+                    const companyName = company.filter(
+                      (c) => c.id === product.company_id
+                    );
                     return (
                       <div className={styles.product} key={product.id}>
                         <div className={styles.product_img}>
@@ -158,7 +161,7 @@ function ProductsByFunctionality({
                             }
                             className={styles.front_img}
                           >
-                            <img src={product.images[0].image} alt="" />
+                            <img src={product.frontimage} alt="" />
                           </div>
                           <div
                             style={
@@ -170,7 +173,7 @@ function ProductsByFunctionality({
                             }
                             className={styles.side_img}
                           >
-                            <img src={product.images[0].image} alt="" />
+                            <img src={product.sideimage} alt="" />
                           </div>
                           <div className={styles.product_img_btns}>
                             {!checkFavorite ? (
@@ -201,7 +204,7 @@ function ProductsByFunctionality({
                           </div>
                         </div>
                         <div className={styles.product_descr}>
-                          <h2>{product.companies.name}</h2>
+                          <h2>{companyName.name}</h2>
                           <p>
                             {product.title && product.title.slice(0, 35)}
                             ...

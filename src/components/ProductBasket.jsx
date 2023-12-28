@@ -39,7 +39,7 @@ function ProductBasket({ products, basket, setAsidebasket }) {
                   <>
                     <div className="basket_product" key={a.id}>
                       <div className="basket_img">
-                        <img src={product?.images[0].image} alt="" />
+                        <img src={product?.frontimage} alt="" />
                       </div>
                       <div className="basket_titles">
                         <p>{product?.title.slice(0, 45)}...</p>

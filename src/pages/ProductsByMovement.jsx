@@ -118,7 +118,7 @@ function ProductsByMovement({
               key={a.id}
               className="probynamebg"
               style={{
-                backgroundImage: `url(${a.image})`,
+                backgroundImage: `url(${a.bgimage})`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
@@ -160,7 +160,7 @@ function ProductsByMovement({
                             }
                             className={styles.front_img}
                           >
-                            <img src={product.images[0].image} alt="" />
+                            <img src={product.frontimage} alt="" />
                           </div>
                           <div
                             style={
@@ -172,7 +172,7 @@ function ProductsByMovement({
                             }
                             className={styles.side_img}
                           >
-                            <img src={product.images[1].image} alt="" />
+                            <img src={product.sideimage} alt="" />
                           </div>
                           <div className={styles.product_img_btns}>
                             {!checkFavorite ? (
